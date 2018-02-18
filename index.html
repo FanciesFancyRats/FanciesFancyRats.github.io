@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title></title>
+  <title>JavaScript Programming | ZENVA.com</title>
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <style>
     canvas {
@@ -8,14 +8,12 @@
       width: 100%;
     }
     body {
-	    padding: 0;
-   	    margin: 0;
 	    background-color: black;
-    }
+	}
   </style>
 </head>
 <body>
-  <h1>Sprites</h1>
+  <h1>Challenge - Multi-Level Game</h1>
   <canvas id="mycanvas" width="640" height="360" ></canvas>
   <script>
     window.addEventListener("load",function() {
@@ -26,6 +24,10 @@
 
       //keep the game going
       var gameLive = true;
+
+      //current level
+      var level = 1;
+
 
       //enemies
       var enemies = [
@@ -53,7 +55,7 @@
         {
           x: 450,
           y: 100,
-          speedY: 5,
+          speedY: -3,
           w: 40,
           h: 40
         }
@@ -116,13 +118,43 @@
 
         //check if you've won the game
         if(checkCollision(player, goal)) {
-          //stop the game
-            gameLive = false;
+          
+          /*
 
-            alert('You\'ve won!');
+          ///////////////////////////////
 
-            //reload page
-            window.location = "";
+          CHALLENGE - MULTI-LEVEL GAME
+
+          -When the player reaches the goal, instead of reloading the page we will
+          increase the "level" variable (declared on line 26)
+
+          -Every time you reach a new level, the player needs to start in it's original position
+
+          -Every time you reach a new level, make the enemies go faster by increasing their speed in 1.
+
+          Hint: when the enemies are moving upwards their speed is negative. Be careful not to make them slower!
+
+          ///////////////////////////////
+          */
+
+	console.log(player.speedX);
+	console.log(enemies[0].speedY);	
+
+	level += 1;
+	
+	player.x = 10;
+	player.y = 160;
+	player.speedX += 0.5;
+
+	enemies.forEach(function(element, index){
+		if (element.speedY < 0) {
+		element.speedY -= 1
+		}
+		else {
+		element.speedY += 1
+		}
+	});
+            
         }
 
         //update player
@@ -141,7 +173,7 @@
             //stop the game
             gameLive = false;
 
-            alert('Game Over!');
+            alert('Score: ' + level );
 
             //reload page
             window.location = "";
