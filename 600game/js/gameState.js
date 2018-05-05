@@ -43,12 +43,12 @@ var gameState = {
 
 
 
-		this.game.load.audio("ding", "sounds/ding.ogg","sounds/ding.mp3");
-		this.game.load.audio("win", "sounds/win.ogg","sounds/win.mp3");
-		this.game.load.audio('hover',  'sounds/click5.ogg','sounds/click5.mp3');
-		this.game.load.audio('click',  'sounds/click4.ogg','sounds/click4.mp3');
-		this.game.load.audio('submit', 'sounds/submit.ogg','sounds/submit.mp3');
-		this.game.load.audio('back', 'sounds/close.ogg','sounds/close.mp3');
+		this.game.load.audio("ding", ["sounds/ding.ogg","sounds/ding.mp3"]);
+		this.game.load.audio("win", ["sounds/win.ogg","sounds/win.mp3"]);
+		this.game.load.audio('hover',  ['sounds/click5.ogg','sounds/click5.mp3']);
+		this.game.load.audio('click',  ['sounds/click4.ogg','sounds/click4.mp3']);
+		this.game.load.audio('submit', ['sounds/submit.ogg','sounds/submit.mp3']);
+		this.game.load.audio('back', ['sounds/close.ogg','sounds/close.mp3']);
 
 		//this.game.load.image('options', 'images/options.png');
 		//this.game.load.image('highScore', 'images/highScore.png');
