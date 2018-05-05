@@ -1,4 +1,3 @@
-console.log('Good luck');
 
 var buttonState = {
 	preload:function(){
@@ -44,11 +43,9 @@ var buttonState = {
 		this.clickDisplay.anchor.setTo(0.5);
 		this.click.play();
 
-		console.log('click');	
 		
 	},
 	release:function(){
-		console.log('release');	
 		this.onlyButton.loadTexture('button', 0);
 	}
 };

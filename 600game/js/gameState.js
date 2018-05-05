@@ -130,7 +130,6 @@ var gameState = {
 },
 	checkDict:function(){
 		//When called this function will check if a word can still be made with the avaliable hand
-		console.log('click');	
 		var x;
 		this.hand = [];
 		for(i = 0; i < this.letters.length; i++){
@@ -139,7 +138,6 @@ var gameState = {
 				this.hand.push(x.value);	
 			}
 		}
-		console.log(this.hand);
 
 
 },
@@ -225,7 +223,6 @@ var gameState = {
 },
 	animateScore:function(add){
 		//TODO I think I have a better way to impliment this, use a for loop and timer.add(displayscore()) or something along those lines
-		console.log('animating');
 		this.game.time.events.loop(Phaser.Timer.QUARTER/4, this.updateText, this);
 
 			
@@ -249,7 +246,6 @@ var gameState = {
 			//this.scoreText = this.game.add.text(1100 , 20, 'Score:',{font: '40px Arial', fill:'#ffffff'});
 			//this.scoreText.anchor.setTo(0.5);
 
-			console.log('updating text', this.animateScoreNum);
 		}
 		else{
 			this.scoreDisplay.kill();
@@ -263,7 +259,6 @@ var gameState = {
 
 	},
 	wait:function(){
-		console.log('wait');	
 	},
 	submit:function(){
 		//Called when displayString is clicked, checks this.string is a word and then kills the word
@@ -337,29 +332,18 @@ var gameState = {
 			wordScore++;		
 		}
 
-		////console.log('for ',wordScore, 'points');
 		this.gameScore+=wordScore;
 		this.animateScoreNum = wordScore;
 		this.animateScore(wordScore);
-		//console.log('Total: ', this.gameScore);
 	},
 	moveLetters:function(){
 		this.guessArray.sort(function(a, b){
 			return a - b;	
 		});	
-		//console.log('Did it sort?', this.guessArray);
 		for(i = 0; i < this.guessArray.length; i++){
 			swapTarget = 0;
 			swapOrign = 0
-			//console.log(this.guessArray[i]);	
-			//console.log(this.guessArray);
 			if(this.guessArray[i] + 8 < 32){
-				//console.log(this.letters.getChildAt(this.guessArray[i]), 'needs moved');
-				//TODO
-				//while guessArray.length > 0
-				//	while target(guessArray(i + 8)) 
-				//This we can modify the .length of an array
-				//so something like i = array.length; i > 0; i--j
 				while(this.guessArray.length > 0){
 					swapOrgin = (this.guessArray[this.guessArray.length - 1]);
 					swapTarget = (this.guessArray[this.guessArray.length - 1] + 8);
@@ -369,11 +353,9 @@ var gameState = {
 						letter = this.letters.getChildAt(swapOrgin);
 						target = this.letters.getChildAt(swapTarget);
 						test = this.letters.getChildAt(swapOrgin + 8);
-						//console.log('letter:', letter.value, 'target:', target.value);
 						swapX = letter.x;
 						swapY = letter.y;
 						if(target.alive){
-						////console.log('swap orgin: ', swapOrgin, 'swap target: ', swapTarget);
 						moveLetter = game.add.tween(this.letters.getChildAt(swapTarget));
 						moveLetter.to({x:swapX, y:swapY}, 0, Phaser.Easing.Bounce.Out, true);
 						if(test.alive){
@@ -390,7 +372,6 @@ var gameState = {
 				}
 			}
 			else{
-				//console.log('nothing to move');	
 			}
 		}			
 	},
@@ -437,7 +418,6 @@ var gameState = {
 			this.highScoreText.strokeThickness = 10;
 			this.highScoreText.anchor.setTo(0.5);
 			highScore = this.gameScore;
-			console.log('updating highScore');
 			this.fanFare.play();
 		}
 		else{
@@ -446,7 +426,6 @@ var gameState = {
 			this.highScoreText.strokeThickness = 10;
 			this.highScoreText.anchor.setTo(0.5);
 		}
-		console.log('this.bonusAnimate: ', this.bonusAnimate);
 		if(this.bonusAnimate > 1){
 			this.bonusText = this.game.add.text(this.game.world.centerX, this.game.world.centerY + 170, left + ' letters left bonus', {font: '60px Arial', fill:'#ffffff'});
 			this.bonusText.anchor.setTo(0.5);
@@ -481,8 +460,6 @@ var gameState = {
 
 	},
 	animateScoreBonus:function(){
-		console.log('Animating bonus');
-		console.log(this.gameScore - this.bonusAnimate);
 		
 		this.game.time.events.loop(Phaser.Timer.QUARTER/4, this.updateTextBonus, this);
 

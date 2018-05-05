@@ -1,5 +1,3 @@
-console.log('We are looking in bootState');
-
 var bootState = {
 	init:function(){
 		highScore = highScore;
@@ -21,7 +19,6 @@ var bootState = {
 		this.game.load.image('options', 'images/highScore.png');
 		this.game.load.image('optionsHover', 'images/highScoreHover.png');
 		this.game.load.image('overlay', 'images/overlay.png');
-		console.log('we are in create');
 	},
 
 	create:function(){
@@ -57,9 +54,7 @@ var bootState = {
 		//this.startButton.inputEnabled = true;
 
 		//this.startButton.events.onInputDown.add(this.startGame, this);
-		console.log('We started the bootState');
 		this.game.stage.backgroundColor	= '#fff';
-		console.log('BootState was updated');
 		this.startText = this.game.add.text(0, 0, 'Start', {font: "144px Arial", fill:"#fff"});
 		this.startText.alignIn(this.startButton, Phaser.CENTER, 0, 0,)
 		this.startText.stroke = '#1b0088';
@@ -99,7 +94,6 @@ var bootState = {
 		this.secretCountDebug = this.game.add.text(1050, 0, this.secretCount, {font: "144px Arial", fill:"#fff"});
 		}
 
-		console.log('click');
 		
 		this.startButton.inputEnabled = false; 
 		this.optionsButton.inputEnabled = false;
