@@ -58,6 +58,8 @@ var gameState = {
 },
 
 	create:function() {
+		this.gameOver = false;	
+
 		this.game.add.image(0, 0, 'BG');
 		this.gameScore = 0;
 		this.displayString = this.game.add.text(this.game.world.centerX, 10, '',{font: "144px Arial", fill:"#ffffff"});
@@ -247,13 +249,12 @@ var gameState = {
 			//this.scoreText.anchor.setTo(0.5);
 
 		}
-		else{
+		else if(!this.gameOver){
 			this.scoreDisplay.kill();
 			this.scoreDisplay = this.game.add.text(1150 , 660, this.gameScore,{font:'60px Arial', fill:'#ffffff'});
 			this.scoreDisplay.anchor.setTo(0.5);
 			this.scoreDisplay.stroke = '#1b0088';
 			this.scoreDisplay.strokeThickness = 5;
-
 			return;	
 		}
 
@@ -380,6 +381,7 @@ var gameState = {
 	//TODO this is broken now, copy and pasted the animate function to try and animate the bonus but, not sure what went wrong but need to get back to work
 	//
 	end:function(){
+		this.gameOver = true;
 	//Calculating Bonus	
 		var bonus = 0;
 	//Finding the number of letters unused		
@@ -401,6 +403,7 @@ var gameState = {
 		
 	//Kill 'Score: '
 		this.scoreText.kill();
+		this.scoreDisplay.kill();
 	//Remove Letters		
 		this.letters.removeAll(true);
 	//Kill score at bottom right
@@ -443,7 +446,6 @@ var gameState = {
 			this.scoreDisplayBonus.inputEnabled = true;
 			this.scoreDisplayBonus.events.onInputDown.add(this.changeState, this);
 		}	
-
 
 		this.endButton.kill();
 		this.endButton = this.game.add.sprite(0,0,"endButton");
