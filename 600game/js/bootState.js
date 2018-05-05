@@ -149,7 +149,7 @@ var bootState = {
 	},
 	creditsCont:function(){
 			this.credits.kill();
-			this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'Made with Phaser v2.6.2\nlicensed: MIT license: \n http://phaser.io\n\nBase on "6.0001 Word Game"\nCreated by: Kevin Luu <luuk> and Jenna Wiens <jwiens>\nhttps://ocw.mit.edu/courses/electrical-engineering-and-computer-science/\n6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016\n\nEverything else\nWould inevitably occur with an infinte number of rats\nambling on an infinite number of computers\nhttps://github.com/FanciesFancyRats', {font:"22px Arial", fill:"#fff"});
+			this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'Made with Phaser v2.6.2\nlicensed MIT license: \n http://phaser.io\n\nBased on "6.0001 Word Game"\nCreated by: Kevin Luu <luuk> and Jenna Wiens <jwiens>\nhttps://ocw.mit.edu/courses/electrical-engineering-and-computer-science/\n6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016\n\nEverything else\nWould inevitably occur with an infinte number of rats\nambling on an infinite number of computers\nhttps://github.com/FanciesFancyRats', {font:"22px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 
 			this.overlay.inputEnabled = true;
@@ -227,30 +227,29 @@ var bootState = {
 		}
 
 		if(this.secretCount === 65){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'maybe', {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'I understand though, you are curious.', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 
 		if(this.secretCount === 70){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'stop', {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'How far does it go?\nWhat happens at the end?', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 75){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'clicking', {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'Maybe you just keep clicking\nAnd I just keep commenting about it', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 
 		if(this.secretCount === 80){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'that', {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'I imagine though,\nwe both probably have better things\nwe could be doing with our time', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 85){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'BUTTON', {font:"300px Arial", fill:"#000"});
-				this.credits.rotation = 0.19;
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'I could be making a new game.\nYou could be going somewhere else maybe?', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 90){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Okay I'm just going to stop counting now", {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Okay, to discourage these shenanigans\nI am going to stop counting\n", {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 95){
@@ -262,19 +261,19 @@ var bootState = {
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 105){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'seriuosly?', {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'Really?', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 110){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'Congratulations you made it to 110', {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'Well if this is really what you want...', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 115){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'You won a prize for your tenacity\nCan you guess what it is?', {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'I think I can put something together\r Just give me a moment.', {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 120){
-				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "I'm going to give you exactly what you want.\nA whole new game!", {font:"30px Arial", fill:"#fff"});
+				this.credits = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Almost got it...", {font:"30px Arial", fill:"#fff"});
 			this.credits.anchor.setTo(0.5);
 		}
 		if(this.secretCount === 125){
