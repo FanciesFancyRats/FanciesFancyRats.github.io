@@ -41,7 +41,7 @@ h3{
 
 .pricing-grid{
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	flex-direction: row;
 	
@@ -130,6 +130,7 @@ a:hover{
 	height: 200px;
 	background-color: #ccd5ff;
 	width: 100%
+
 }
 .footer-div{
 	font-family: 'Comfortaa', cursive;
@@ -146,7 +147,6 @@ a:hover{
 }
 .nav-link{
 	margin: 0;
-	display: block;
 }
 .form-div{
 	display: flex;
@@ -161,7 +161,7 @@ a:hover{
 	display: block;
 }
 .filler-div{
-	height: 520px;
+	height: 110px;
 }
 .about-filler{
 	display: block;
@@ -174,7 +174,7 @@ a:hover{
 	width: 20px;
 }
 .about-text{
-	font-size: 15px;
+	font-size: 20px;
 	display: block;
 	margin: 0;
 }
@@ -201,11 +201,14 @@ a:hover{
 	height: 30px;
 	background-color: hotpink;
 }
-
-@media (min-width: 1220px){
-	.filler-div{
-		height: 110px;	
+@media (min-width: 655px){
+	.header-flex{
+		flex-direction: row;	
+		height: 110px;
 	}
+	
+}
+@media (min-width: 1220px){
 
 	body{
 		margin: 0;
@@ -222,8 +225,10 @@ a:hover{
 	}
 }
 @media (max-width: 825px){
-	.filler-div{
-		height: 200px;	
+	.about-text{
+		font-size: 15px;
+		display: block;
+		margin: 0;
 	}
 	.bullet{
 		display: none;	
@@ -264,14 +269,5 @@ a:hover{
 	.pricing-div{
 		min-width: 300px;
 		height: 375px;	
-	}
-}
-@media (min-width: 655px){
-	.filler-div{
-		height: 110px;	
-	}
-	.header-flex{
-		flex-direction: row;	
-		height: 110px;
 	}
 }
